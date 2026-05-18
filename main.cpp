@@ -11,8 +11,7 @@ int main() {
   my_DrawCircle draw2; // idk why there are 2
   draw1.fixed = false; // status of firstcircle1
   draw2.fixed = false; // status of firstcircle2
-  bool started =
-      false; // checks if we have presed the mouse button even onec as without
+  bool started =false; // checks if we have presed the mouse button even onec as without
              // iskeyup is  true in the starting before even pressing the button
   bool was_key_pressed =
       false; // was keypressed need to chng the state of circles(fixed or not)

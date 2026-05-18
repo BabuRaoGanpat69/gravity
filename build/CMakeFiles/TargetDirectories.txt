@@ -1,3 +1,0 @@
-/home/baburao/Documents/projects/gravity/build/CMakeFiles/main.dir
-/home/baburao/Documents/projects/gravity/build/CMakeFiles/edit_cache.dir
-/home/baburao/Documents/projects/gravity/build/CMakeFiles/rebuild_cache.dir
