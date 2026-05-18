@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/baburao/Documents/projects/gravity/build",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/baburao/Documents/projects/gravity/include -I/src -g -o CMakeFiles/main.dir/drawcircle.cpp.o -c /home/baburao/Documents/projects/gravity/drawcircle.cpp",
+  "file": "/home/baburao/Documents/projects/gravity/drawcircle.cpp",
+  "output": "CMakeFiles/main.dir/drawcircle.cpp.o"
+},
+{
+  "directory": "/home/baburao/Documents/projects/gravity/build",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/baburao/Documents/projects/gravity/include -I/src -g -o CMakeFiles/main.dir/input.cpp.o -c /home/baburao/Documents/projects/gravity/input.cpp",
+  "file": "/home/baburao/Documents/projects/gravity/input.cpp",
+  "output": "CMakeFiles/main.dir/input.cpp.o"
+},
+{
+  "directory": "/home/baburao/Documents/projects/gravity/build",
+  "command": "/usr/bin/g++ -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -I/home/baburao/Documents/projects/gravity/include -I/src -g -o CMakeFiles/main.dir/main.cpp.o -c /home/baburao/Documents/projects/gravity/main.cpp",
+  "file": "/home/baburao/Documents/projects/gravity/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.o"
+}
+]

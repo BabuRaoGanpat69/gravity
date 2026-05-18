@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -Wl,--dependency-file=CMakeFiles/main.dir/link.d CMakeFiles/main.dir/drawcircle.cpp.o CMakeFiles/main.dir/input.cpp.o CMakeFiles/main.dir/main.cpp.o -o main  /usr/local/lib/libraylib.a -lm /usr/lib/libSM.so /usr/lib/libICE.so /usr/lib/libX11.so /usr/lib/libXext.so -lgcc_s_asneeded -lgcc_s_asneeded

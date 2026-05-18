@@ -1,0 +1,7 @@
+#include "include/drawcircle.h"
+#include <iostream>
+void my_DrawCircle::will_draw_circle(Vector2 coord, float radius, Color color,
+                                     bool fixed) {
+
+  DrawCircleV(coord, radius, color);
+};
