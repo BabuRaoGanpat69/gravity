@@ -1,0 +1,22 @@
+#include "./gravity.h"
+#include <raylib.h>
+Vector2 gravity::acc(Vector2 p1, Vector2 p2, float m) {
+  vec2.x = -(m * G /
+             ((pow((sqrt(pow((p1.x - p2.x), 2) + pow((p1.y - p2.y), 2))), 3)) +
+              ep)) *
+           (p1.x - p2.x);
+  vec2.y = -(m * G /
+             ((pow((sqrt(pow((p1.x - p2.x), 2) + pow((p1.y - p2.y), 2))), 3)) +
+              ep)) *
+           (p1.y - p2.y);
+  // std::cout<<vec2.x<<"acc"<<vec2.y<<std::endl;
+  return vec2;
+};
+
+Vector2 gravity::position(Vector2 a, Vector2 u, float t, float prev_x,
+                          float prev_y) {
+  vec2.x = prev_x + (u.x * t + 0.5 * a.x * t * t);
+  vec2.y = prev_y + (u.y * t + 0.5 * a.y * t * t);
+  // std::cout<<vec2.x-prev_x<<"pos"<<vec2.y<<std::endl;
+  return vec2;
+};

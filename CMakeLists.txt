@@ -10,6 +10,7 @@ main
 drawcircle.cpp
 input.cpp
 main.cpp
+gravity.cpp
 )
 
 # This code downloads raylib into a directory called _deps and adds it as a subdirectory, compiling it with the program when running the build command

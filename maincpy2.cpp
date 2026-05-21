@@ -1,92 +1,81 @@
 #include "drawcircle.cpp"
 #include "input.cpp"
+#include "gravity.cpp"
 #include <iostream>
 #include <raylib.h>
-#include <vector>
 int main() {
   const int screenWidth = 800;
   const int screenHeight = 450;
   InitWindow(screenWidth, screenHeight, "GRAVITY");
 
-  my_DrawCircle draw1;
-  my_DrawCircle draw2;
-  draw1.fixed = false;
-  draw2.fixed = false;
-  bool started1 = false;
-  bool started2 = false;
-  bool was_key_pressed = false;
+  my_DrawCircle draw1; // obj
+  my_DrawCircle draw2; // idk why there are 2
+  draw1.fixed = false; // status of firstcircle1
+  draw2.fixed = false; // status of firstcircle2
+  bool started =false; // checks if we have presed the mouse button even onec as without
+             // iskeyup is  true in the starting before even pressing the button
+  bool was_key_pressed =
+      false; // was keypressed need to chng the state of circles(fixed or not)
+  Vector2 temp_coord; // gets coord from mouse
   input inp;
 
-  float radius1 = 0;
-  double starttime1 = 0;
-  double endtime1 = 0;
-  Vector2 temp_coord1;
-  Vector2 perm_coord1;
+  float radius1 = 0;   // self
+  Vector2 perm_coord1; // stores permamnet coord of 1
 
-  float radius2 = 0;
-  double starttime2 = 0;
-  double endtime2 = 0;
-  Vector2 temp_coord2;
-  Vector2 perm_coord2;
+  float radius2 = 0;   // self
+  Vector2 perm_coord2; // stores permamnet coord of 2
 
-  SetTargetFPS(6);
+  SetTargetFPS(60);
   Color color;
   color = GOLD;
   while (!WindowShouldClose()) {
     BeginDrawing();
 
-    // started1 = false;
     ClearBackground(BLACK);
-
-    // if (!draw1.fixed) {
-    temp_coord1 = inp.r_coord();
-    // }
-    // if (!draw2.fixed) {
-    //  temp_coord2 = inp.r_coord();
-    //}
+    temp_coord = inp.r_coord();
 
     if (IsMouseButtonDown(0)) {
-      started1 = true;
+      started = true;
       was_key_pressed = true;
-      if (!draw2.fixed) {
-        radius2 += 1;
-        perm_coord2 = temp_coord1;
-        // radius2 = radius2;
-        draw2.will_draw_circle(temp_coord1, radius2, VIOLET, true);
-      }
+
       if (!draw1.fixed) {
         radius1 += 1;
-        perm_coord1 = temp_coord1;
-        //  perm_radius1 = temp_radius1;
+        perm_coord1 = temp_coord;
+        draw1.will_draw_circle(temp_coord, radius1, color, true);
 
-        draw1.will_draw_circle(temp_coord1, radius1, color, true);
+      } else if (!draw2.fixed) { // else if because then both radius will
+                                 // increase at same time in starting even if
+                                 // radius1 should increase in starting only
+        radius2 += 1;
+        perm_coord2 = temp_coord;
+        std::cout << "riyiyvb" << std::endl;
+        draw2.will_draw_circle(temp_coord, radius2, color, true);
       }
+
       if (draw1.fixed) {
-        draw1.will_draw_circle(perm_coord1, radius1, YELLOW, true);
+        draw1.will_draw_circle(perm_coord1, radius1, color, true);
       }
       if (draw2.fixed) {
-        draw1.will_draw_circle(perm_coord2, radius2, GREEN, true);
+        draw1.will_draw_circle(perm_coord2, radius2, color, true);
       }
     }
-    if (started1) {
+
+    if (started) {
       if (IsMouseButtonUp(0)) {
 
-        // temp_radius1 = 0;
         if (was_key_pressed) {
           if (draw1.fixed) {
             draw2.fixed = true;
-            // temp_radius2 = 0;
           }
           was_key_pressed = false;
         }
-        draw2.will_draw_circle(perm_coord2, radius2, RED, true);
-        draw1.fixed = true;
+        draw2.will_draw_circle(perm_coord2, radius2, color, true);
+        draw1.fixed = true; // it is after draw2 becuase then draw2 will be
+                            // turned ture in the starting when the draw1
+                            // chnages true to stop that it is after;
         draw1.will_draw_circle(perm_coord1, radius1, color, true);
       }
     }
-
-    std::cout << "draw1" << draw1.fixed << "draw2" << draw2.fixed << std::endl;
-    
     EndDrawing();
   }
 

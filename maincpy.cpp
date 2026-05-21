@@ -58,8 +58,7 @@ int main() {
         perm_radius1 = temp_radius1;
         draw1.will_draw_circle(temp_coord1, temp_radius1, color, true);
       }
-      if(started2)
-      {
+      if (started2) {
         draw1.will_draw_circle(perm_coord1, perm_radius1, color, true);
       }
     }
@@ -84,3 +83,8 @@ int main() {
 
   return 0;
 }
+
+draw1.will_draw_circle(
+    gr.position(gr.acc(current_coord1, current_coord2, 10000), gr.inti_u,
+                (1 / 60), current_coord1.x, current_coord1.y),
+    radius1, color, true);

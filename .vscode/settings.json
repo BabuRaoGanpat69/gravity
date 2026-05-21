@@ -1,0 +1,6 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true
+}
