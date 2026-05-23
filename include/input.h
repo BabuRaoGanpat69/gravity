@@ -2,7 +2,6 @@
 #include <chrono>
 #include <iostream>
 #include <raylib.h>
-#include <thread>
 using namespace std::chrono_literals;
 class input {
 public:
