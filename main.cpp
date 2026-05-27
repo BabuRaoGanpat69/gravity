@@ -37,6 +37,7 @@ int main() {
   int noOfBody = 0;
 
   int fps = 60;
+  
   float dt = (1.0 / fps) * scale;
   SetTargetFPS(fps);
   while (!WindowShouldClose()) {
