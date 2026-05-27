@@ -12,10 +12,9 @@ Vector2 gravity::acc(Vector2 p1, Vector2 p2, float m) {
            (p1.y - p2.y);
   return vec2;
 };
-Vector2 gravity::position(Vector2 a, Vector2 u, float t, float prev_x,
-                          float prev_y) {
-  vec2.x = prev_x + (u.x * t + 0.5 * a.x * t * t);
-  vec2.y = prev_y + (u.y * t + 0.5 * a.y * t * t);
+Vector2 gravity::position(Vector2 a, Vector2 u, float t, Vector2 prev_coord) {
+  vec2.x = prev_coord.x + (u.x * t + 0.5 * a.x * t * t);
+  vec2.y = prev_coord.y + (u.y * t + 0.5 * a.y * t * t);
   return vec2;
 };
 gravity::gravity() {
