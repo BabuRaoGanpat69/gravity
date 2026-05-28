@@ -27,7 +27,7 @@ int main() {
   float scale = 1;
   input inp;
   int x_pad = 40;
-  int y_pad = 20;
+  int y_pad = 27;
   int fsize = 25;
 
   my_DrawCircle draw1;
@@ -37,7 +37,7 @@ int main() {
   int noOfBody = 0;
 
   int fps = 60;
-  
+
   float dt = (1.0 / fps) * scale;
   SetTargetFPS(fps);
   while (!WindowShouldClose()) {
@@ -103,7 +103,6 @@ int main() {
             draw1.will_draw_circle(mass->posit, mass->radius, RED, !sim_on,
                                    mass->fixed);
             draw1.stats(mass, x_pad, y_pad, fsize, font, WHITE, spacing);
-            ;
           }
         };
       };
